@@ -10,9 +10,10 @@ const ResetPassword = () => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post(`${import.meta.env.VITE_URL_SERVER}/usuarios/reset-password/${token}`, {
-        password: data.password,
-      });
+      await axios.post(
+  `${import.meta.env.VITE_URL_SERVER}/usuarios/reset-password/${token}`,
+  { password: data.password }
+);
 
       Swal.fire("Éxito", "Tu contraseña ha sido actualizada", "success");
       navigate("/login");
